@@ -13,6 +13,14 @@
   animation: fadeIn 10s;
 }
 
+.about-image {
+  margin-right: 0;
+  transition: margin 2s ease-in-out;
+}
+
+.about-image:hover {
+  margin: 40px;
+}
 .iconsjs,
 .iconsreact {
   float: right;

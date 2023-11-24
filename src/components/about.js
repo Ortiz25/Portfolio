@@ -13,6 +13,7 @@ import css3 from "../images/svg/css3.svg";
 import react from "../images/svg/react.svg";
 import node from "../images/svg/node.svg";
 import { useSpring, animated } from "react-spring";
+import cv from "../files/cv.pdf";
 
 function About() {
   const [animationProps, set] = useSpring(() => ({
@@ -33,7 +34,7 @@ function About() {
   const observer = new IntersectionObserver(onIntersection, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.4,
+    threshold: 0.7,
   });
 
   useEffect(() => {
@@ -53,18 +54,25 @@ function About() {
       <Container>
         <Row>
           <Col md="6" className={classes.aboutImg}>
-            <img src={html5} className={classes.icons} height="40" alt="" />
-            <img src={node} className={classes.iconsnode} height="45" alt="" />
-            <img src={js} className={classes.iconsjs} height="40" alt="" />
-            <Image src={imagep} thumbnail fluid />
+            <div className={classes["about-image"]}>
+              <img src={html5} className={classes.icons} height="40" alt="" />
+              <img
+                src={node}
+                className={classes.iconsnode}
+                height="45"
+                alt=""
+              />
+              <img src={js} className={classes.iconsjs} height="40" alt="" />
+              <Image src={imagep} thumbnail fluid />
 
-            <img src={css3} className={classes.icons} height="40" alt="" />
-            <img
-              src={react}
-              className={classes.iconsreact}
-              height="40"
-              alt=""
-            />
+              <img src={css3} className={classes.icons} height="40" alt="" />
+              <img
+                src={react}
+                className={classes.iconsreact}
+                height="40"
+                alt=""
+              />
+            </div>
           </Col>
           <Col md="6" className={classes.fade}>
             <animated.div id="animated-element" style={animationProps}>
@@ -86,7 +94,9 @@ function About() {
                   height="25"
                   className={classes.fileicon}
                 />
-                Download CV
+                <a href={cv} download target="_blank">
+                  Download CV
+                </a>
               </Button>
             </animated.div>
           </Col>

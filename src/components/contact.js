@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,8 +9,43 @@ import phoneImage from "../images/svg/phone1.svg";
 import emailImage from "../images/svg/envelope.svg";
 import locationImage from "../images/svg/location.svg";
 import Spinner from "react-bootstrap/Spinner";
+import { useSpring, animated } from "react-spring";
 
 function Contact() {
+  const [animationProps, set] = useSpring(() => ({
+    opacity: 0,
+    transform: "translateY(50px)",
+  }));
+
+  const onIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        set({ opacity: 1, transform: "translateY(0)" });
+      } else {
+        set({ opacity: 0, transform: "translateY(50px)" });
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(onIntersection, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+  });
+
+  useEffect(() => {
+    const target = document.getElementById("poster");
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, [observer]);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -57,22 +92,26 @@ function Contact() {
         </Row>
         <Row>
           <Col md={6}>
-            <div className={classes.poster}>
+            <animated.div
+              className={classes.poster}
+              style={animationProps}
+              id="poster"
+            >
               <div className={classes.modal}>
                 <div className={classes["icon-phone"]}>
-                  <img src={phoneImage} alt="" height="45" />
+                  <img src={phoneImage} alt="" />
                 </div>
                 <div className={classes.info}>
-                  <h5>Call:</h5>
+                  <h5 className={classes["heading_poster"]}>Call:</h5>
                   <span>(+254) 726500307</span>
                 </div>
               </div>
               <div className={classes.modal}>
                 <div className={classes["icon-email"]}>
-                  <img src={emailImage} alt="" height="45" />
+                  <img src={emailImage} alt="" />
                 </div>
                 <div className={classes.info}>
-                  <h5>Email:</h5>
+                  <h5 className={classes["heading_poster"]}>Email:</h5>
                   <span>Samueldeya@gmail.com</span>
                 </div>
               </div>
@@ -81,11 +120,11 @@ function Contact() {
                   <img src={locationImage} alt="" height="40" />
                 </div>
                 <div className={classes.info}>
-                  <h5>Location:</h5>
+                  <h5 className={classes["heading_poster"]}>Location:</h5>
                   <span>Nairobi, Kenya</span>
                 </div>
               </div>
-            </div>
+            </animated.div>
           </Col>
           <Col md={6}>
             <Form className={classes.form} onSubmit={handleSubmit}>

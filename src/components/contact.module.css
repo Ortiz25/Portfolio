@@ -45,14 +45,17 @@
 .icon-phone {
   display: inline;
   margin: 1%;
+  height: 45px;
 }
 .icon-email {
   display: inline;
   margin: 1%;
+  height: 45px;
 }
 .icon-location {
   display: inline;
   margin: 4%;
+  height: 45px;
 }
 
 .info {
@@ -66,4 +69,62 @@ h5 {
 }
 .btn {
   margin-left: 30%;
+}
+@media screen and (max-width: 480px) {
+  .icon-phone,
+  .icon-email,
+  .icon-location {
+    display: block;
+  }
+
+  .poster {
+    padding: 5%;
+    font-size: 50%;
+    width: 90%;
+  }
+  .modal {
+    margin: 8%;
+  }
+  .heading_poster {
+    font-size: 80%;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .poster {
+    padding: 2%;
+    font-size: 70%;
+  }
+  .heading_poster {
+    font-size: 80%;
+    font-weight: 800;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    margin: 5%;
+  }
+  .poster {
+    padding: 2%;
+    font-size: 70%;
+  }
+  .heading_poster {
+    font-size: 100%;
+    font-weight: 900;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .modal {
+    margin: 8%;
+  }
+  .poster {
+    padding: 5%;
+    font-size: 85%;
+  }
+  .heading_poster {
+    font-size: 100%;
+    font-weight: 900;
+  }
 }
