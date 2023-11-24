@@ -9,8 +9,15 @@ import classes from "./home.module.css";
 import gitSVG from "../images/svg/github.svg";
 import linkSVG from "../images/svg/linkedin.svg";
 import Typewriter from "../util/type";
+import { useSpring, animated } from "react-spring";
 
 function Home() {
+  const props = useSpring({
+    opacity: 1,
+    transform: "translateX(0)",
+    from: { opacity: 0, transform: "translateX(50px)" },
+    config: { tension: 50, friction: 5 },
+  });
   return (
     <div className={classes.root}>
       <Container>
@@ -26,10 +33,10 @@ function Home() {
                 <Typewriter text="Samuel Deya !" delay={200} />
               </h1>
               <h2>a Web Developer and an Engineer</h2>
-              <p>
-                I am a fullstack web developer and a telecommunications Engineer
-                by training.
-              </p>
+              <animated.p style={props}>
+                I am a fullstack web developer and a Networks Engineer by
+                training.
+              </animated.p>
             </span>
 
             <Button variant="primary" className={classes.btn}>
@@ -63,7 +70,9 @@ function Home() {
             </div>
           </Col>
           <Col md="6" className={classes.profile}>
-            <Image src={profile} roundedCircle fluid loading="" />
+            <animated.div style={props}>
+              <Image src={profile} roundedCircle fluid loading="" />
+            </animated.div>
           </Col>
         </Row>
       </Container>

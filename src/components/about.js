@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,8 +12,42 @@ import js from "../images/svg/js.svg";
 import css3 from "../images/svg/css3.svg";
 import react from "../images/svg/react.svg";
 import node from "../images/svg/node.svg";
+import { useSpring, animated } from "react-spring";
 
 function About() {
+  const [animationProps, set] = useSpring(() => ({
+    opacity: 0,
+    transform: "translateX(50px)",
+  }));
+
+  const onIntersection = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        set({ opacity: 1, transform: "translateX(0)" });
+      } else {
+        set({ opacity: 0, transform: "translateX(50px)" });
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(onIntersection, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.4,
+  });
+
+  useEffect(() => {
+    const target = document.getElementById("animated-element");
+    if (target) {
+      observer.observe(target);
+    }
+
+    return () => {
+      if (target) {
+        observer.unobserve(target);
+      }
+    };
+  }, [observer]);
   return (
     <div className={classes.root} id="about">
       <Container>
@@ -33,22 +67,28 @@ function About() {
             />
           </Col>
           <Col md="6" className={classes.fade}>
-            <h5 className={classes.me}>About Me</h5>
-            <h3>
-              I am passionate about creating beautiful and functional websites
-              that provide an excellent user experience
-            </h3>
-            <p>
-              As a specialist in HTML, CSS and Javascript (React and Node js), I
-              have a deep understanding of the core building blocks of modern
-              web design.With a focus on accessibility and responsive design.I
-              strive to deliver websites and web apps that look great and work
-              seamlessly across all devices.
-            </p>
-            <Button>
-              <Image src={fileIcon} height="25" className={classes.fileicon} />
-              Download CV
-            </Button>
+            <animated.div id="animated-element" style={animationProps}>
+              <h5 className={classes.me}>About Me</h5>
+              <h3>
+                I am passionate about creating beautiful and functional websites
+                that provide an excellent user experience
+              </h3>
+              <p>
+                As a specialist in HTML, CSS and Javascript (React and Node js),
+                I have a deep understanding of the core building blocks of
+                modern web design.With a focus on accessibility and responsive
+                design.I strive to deliver websites and web apps that look great
+                and work seamlessly across all devices.
+              </p>
+              <Button>
+                <Image
+                  src={fileIcon}
+                  height="25"
+                  className={classes.fileicon}
+                />
+                Download CV
+              </Button>
+            </animated.div>
           </Col>
         </Row>
       </Container>
