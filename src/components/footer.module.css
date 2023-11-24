@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2%;
+  background-color: #eef5ff;
+}
+
+.git {
+  margin: 20px;
+}
+.link {
+  color: black;
+}
+.brand {
+  font-family: "Raleway", sans-serif;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 40px;
+}

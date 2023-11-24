@@ -1,0 +1,43 @@
+.root {
+  padding: 2%;
+  background-color: #eef5ff;
+}
+
+.fileicon {
+  margin-right: 10px;
+}
+
+.aboutImg {
+  height: 60%;
+  padding: 2%;
+  animation: fadeIn 10s;
+}
+
+.iconsjs,
+.iconsreact {
+  float: right;
+}
+
+.iconsnode {
+  margin-left: 40%;
+}
+
+.me {
+  color: #7743db;
+  font-family: "Raleway", sans-serif;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 40px;
+}
+
+.fade {
+  animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

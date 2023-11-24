@@ -1,0 +1,29 @@
+.heading {
+  padding: 5%;
+  text-align: center;
+}
+
+.skills {
+  color: #7743db;
+  font-family: "Raleway", sans-serif;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 40px;
+}
+
+.active-area {
+  text-align: center;
+}
+.img_card {
+  transition: height 1s ease;
+}
+
+.img_card:hover {
+  height: 60px;
+}
+.active-hardware {
+  text-align: center;
+}
+
+.title {
+  text-decoration: underline;
+}

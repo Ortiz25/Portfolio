@@ -1,0 +1,11 @@
+#root {
+  box-shadow: 1px 1px 8px grey;
+  height: 80px;
+  background-color: blue;
+}
+
+.brand {
+  font-family: "Raleway", sans-serif;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 40px;
+}

@@ -1,0 +1,59 @@
+.root {
+  padding: 30px;
+}
+
+.intro {
+  line-height: 80px;
+  margin-top: 100px;
+}
+
+.join {
+  display: inline-block;
+}
+.git {
+  height: 30px;
+}
+
+.links {
+  display: inline;
+  border: 1px solid black;
+  height: 120px;
+  padding: 4%;
+  margin: 2%;
+  border-radius: 60px;
+  background-color: #eef5ff;
+  border-style: none;
+  transition: margin-left 2s;
+}
+.links:hover {
+  margin-left: 40px;
+  background-color: #83a2ff;
+}
+
+.aboutImage {
+  height: 150px;
+  max-height: 200px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  width: 100px;
+  transition: width 3s, box-shadow 1s;
+}
+
+.btn:hover {
+  width: 120px;
+  box-shadow: 1px 1px 8px, blue;
+}
+.profile {
+  padding: 8%;
+}
+
+@media screen and (max-width: 1200px) {
+  p {
+    line-height: normal;
+  }
+}

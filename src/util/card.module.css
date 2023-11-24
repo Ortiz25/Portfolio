@@ -1,0 +1,11 @@
+.root {
+  background-color: white;
+  padding: 3%;
+  border-radius: 5%;
+  width: fit-content;
+  border: 1px solid black;
+  box-shadow: 1px 1px 20px grey;
+  border-style: none;
+  margin: 2%;
+  display: inline-block;
+}
