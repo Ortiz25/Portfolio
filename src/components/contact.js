@@ -11,7 +11,7 @@ import locationImage from "../images/svg/location.svg";
 import Spinner from "react-bootstrap/Spinner";
 import { useSpring, animated } from "react-spring";
 
-function Contact() {
+function Contact({ darkTheme }) {
   const [animationProps, set] = useSpring(() => ({
     opacity: 0,
     transform: "translateY(-100px)",
@@ -78,8 +78,12 @@ function Contact() {
     updateSubmit(false);
   }
 
+  const darkStyle = darkTheme
+    ? { backgroundColor: "#212529", color: "white" }
+    : { color: "black" };
+
   return (
-    <div className={classes.root} id="contact">
+    <div className={classes.root} id="contact" style={darkStyle}>
       <Container>
         <Row>
           <Col className={classes.heading}>

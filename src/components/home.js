@@ -11,15 +11,18 @@ import linkSVG from "../images/svg/linkedin.svg";
 import Typewriter from "../util/type";
 import { useSpring, animated } from "react-spring";
 
-function Home() {
+function Home({ darkTheme }) {
   const props = useSpring({
     opacity: 1,
     transform: "translateX(0)",
     from: { opacity: 0, transform: "translateX(50px)" },
     config: { tension: 50, friction: 5 },
   });
+  const darkStyle = darkTheme
+    ? { backgroundColor: "#212529", color: "white" }
+    : { color: "black" };
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={darkStyle}>
       <Container>
         <Row>
           <Col md="6" className={classes.intro}>

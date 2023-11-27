@@ -3,11 +3,11 @@
   justify-content: center;
   text-align: center;
   padding: 2%;
-  background-color: #eef5ff;
+  box-shadow: 1px 1px 10px grey;
 }
 
 .git {
-  margin: 20px;
+  height: 30px;
 }
 .link {
   color: black;
@@ -20,4 +20,21 @@
 
 .brand:hover {
   color: #7743db !important;
+}
+.icons {
+  padding: 2%;
+}
+.links {
+  display: inline;
+  border: 1px solid black;
+  height: 70px;
+  padding: 1%;
+  border-radius: 60px;
+  background-color: #eef5ff;
+  transition: margin-left 2s;
+  margin: 2%;
+}
+.links:hover {
+  margin-left: 40px;
+  background-color: #83a2ff;
 }

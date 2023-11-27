@@ -7,9 +7,14 @@ import classes from "./footer.module.css";
 import gitSVG from "../images/svg/github.svg";
 import linkSVG from "../images/svg/linkedin.svg";
 
-function Footer() {
+function Footer({ darkTheme }) {
+  const darkStyle = darkTheme
+    ? { backgroundColor: "#212529", color: "white" }
+    : { backgroundColor: " #eef5ff" };
+
+  const lightStyle = darkTheme ? { color: "white" } : { color: "black" };
   return (
-    <div className={classes.root}>
+    <Nav className={classes.root} style={darkStyle}>
       <Container fluid>
         <Row>
           <Col>
@@ -19,40 +24,64 @@ function Footer() {
         <Row>
           <Col>
             <Nav className="justify-content-center flex-grow-1 pe-3">
-              <Nav.Link href="#home" className={classes.link}>
+              <Nav.Link
+                href="#home"
+                className={classes.link}
+                style={lightStyle}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link href="#about" className={classes.link}>
+              <Nav.Link
+                href="#about"
+                className={classes.link}
+                style={lightStyle}
+              >
                 About
               </Nav.Link>
-              <Nav.Link href="#skills" className={classes.link}>
+              <Nav.Link
+                href="#skills"
+                className={classes.link}
+                style={lightStyle}
+              >
                 Skills
               </Nav.Link>
-              <Nav.Link href="#services" className={classes.link}>
+              <Nav.Link
+                href="#services"
+                className={classes.link}
+                style={lightStyle}
+              >
                 Services
               </Nav.Link>
-              <Nav.Link href="#contact" className={classes.link}>
+              <Nav.Link
+                href="#contact"
+                className={classes.link}
+                style={lightStyle}
+              >
                 Contact
               </Nav.Link>
             </Nav>
           </Col>
         </Row>
         <Row>
-          <Col>
-            <a
-              href="https://github.com/Ortiz25?tab=repositories&q=&type=public&language=&sort="
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={gitSVG} alt="" height="30" className={classes.git} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/samuel-deya-307b3171/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={linkSVG} alt="" height="30" className={classes.git} />
-            </a>
+          <Col className={classes.icons}>
+            <div className={classes.links}>
+              <a
+                href="https://github.com/Ortiz25?tab=repositories&q=&type=public&language=&sort="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={gitSVG} alt="" className={classes.git} />
+              </a>
+            </div>
+            <div className={classes.links}>
+              <a
+                href="https://www.linkedin.com/in/samuel-deya-307b3171/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={linkSVG} alt="" className={classes.git} />
+              </a>
+            </div>
           </Col>
         </Row>
         <hr />
@@ -60,7 +89,7 @@ function Footer() {
           <Col> &copy; copyright 2023. All Rights Reserved</Col>
         </Row>
       </Container>
-    </div>
+    </Nav>
   );
 }
 
