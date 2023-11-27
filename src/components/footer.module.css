@@ -33,8 +33,19 @@
   background-color: #eef5ff;
   transition: margin-left 2s;
   margin: 2%;
+  border-style: none;
 }
 .links:hover {
   margin-left: 40px;
   background-color: #83a2ff;
+}
+
+@media screen and (max-width: 880px) {
+  .git {
+    height: 20px;
+  }
+  .links {
+    padding: 2%;
+    margin: 5%;
+  }
 }
