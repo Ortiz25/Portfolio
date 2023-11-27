@@ -24,6 +24,10 @@
 .title {
   text-decoration: underline;
 }
+h5,
+h6 {
+  color: black;
+}
 
 .h5 {
   position: absolute;
