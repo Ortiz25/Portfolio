@@ -32,7 +32,9 @@ function Home() {
               <h1>
                 <Typewriter text="Samuel Deya !" delay={200} />
               </h1>
-              <h2>a Web Developer and an Engineer</h2>
+              <h2 className={classes["typed-out"]}>
+                A Web Developer and a Network Engineer
+              </h2>
               <animated.p style={props}>
                 I am a fullstack web developer and a Networks Engineer by
                 training.

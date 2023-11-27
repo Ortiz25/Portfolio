@@ -17,3 +17,7 @@
   font-family: "Smooch Sans", sans-serif;
   font-size: 40px;
 }
+
+.brand:hover {
+  color: #7743db !important;
+}

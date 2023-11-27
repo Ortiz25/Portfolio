@@ -14,7 +14,7 @@ import { useSpring, animated } from "react-spring";
 function Contact() {
   const [animationProps, set] = useSpring(() => ({
     opacity: 0,
-    transform: "translateY(50px)",
+    transform: "translateY(-100px)",
   }));
 
   const onIntersection = (entries) => {
@@ -22,18 +22,17 @@ function Contact() {
       if (entry.isIntersecting) {
         set({ opacity: 1, transform: "translateY(0)" });
       } else {
-        set({ opacity: 0, transform: "translateY(50px)" });
+        set({ opacity: 0, transform: "translateY(-100px)" });
       }
     });
   };
 
-  const observer = new IntersectionObserver(onIntersection, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.3,
-  });
-
   useEffect(() => {
+    const observer = new IntersectionObserver(onIntersection, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
     const target = document.getElementById("poster");
     if (target) {
       observer.observe(target);
@@ -44,7 +43,7 @@ function Contact() {
         observer.unobserve(target);
       }
     };
-  }, [observer]);
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",

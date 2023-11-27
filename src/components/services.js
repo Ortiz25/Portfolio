@@ -13,7 +13,7 @@ import { useSpring, animated } from "react-spring";
 function Services() {
   const [animationProps, set] = useSpring(() => ({
     opacity: 0,
-    transform: "translateX(-50px)",
+    transform: "translateX(-70px)",
   }));
 
   const onIntersection = (entries) => {
@@ -21,18 +21,17 @@ function Services() {
       if (entry.isIntersecting) {
         set({ opacity: 1, transform: "translateX(0)" });
       } else {
-        set({ opacity: 0, transform: "translateX(-50px)" });
+        set({ opacity: 0, transform: "translateX(-70px)" });
       }
     });
   };
 
-  const observer = new IntersectionObserver(onIntersection, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.4,
-  });
-
   useEffect(() => {
+    const observer = new IntersectionObserver(onIntersection, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.4,
+    });
     const target = document.getElementById("animated-element1");
     if (target) {
       observer.observe(target);
@@ -43,7 +42,7 @@ function Services() {
         observer.unobserve(target);
       }
     };
-  }, [observer]);
+  }, []);
 
   return (
     <div className={classes.root} id="services">

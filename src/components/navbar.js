@@ -31,12 +31,28 @@ function Navigationbar() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#about">About</Nav.Link>
-                <Nav.Link href="#skills">Skills</Nav.Link>
-                <Nav.Link href="#services">Services</Nav.Link>
-                <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav
+                className="justify-content-end flex-grow-1 pe-3"
+                navbarScroll
+                onSelect={(selectedKey, event) =>
+                  event.target.classList.toggle("active")
+                }
+              >
+                <Nav.Link href="#home" eventKey="home">
+                  Home
+                </Nav.Link>
+                <Nav.Link href="#about" eventKey="about">
+                  About
+                </Nav.Link>
+                <Nav.Link href="#skills" eventKey="skills">
+                  Skills
+                </Nav.Link>
+                <Nav.Link href="#services" eventKey="services">
+                  Services
+                </Nav.Link>
+                <Nav.Link href="#contact" eventKey="contact">
+                  Contact
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

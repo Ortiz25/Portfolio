@@ -9,3 +9,11 @@
   font-family: "Smooch Sans", sans-serif;
   font-size: 40px;
 }
+
+.active {
+  color: red !important;
+}
+
+a:hover {
+  color: #7743db !important;
+}
