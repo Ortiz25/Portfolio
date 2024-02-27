@@ -1,7 +1,6 @@
 #root {
-  box-shadow: 1px 1px 8px grey;
+  box-shadow: 0px 1px 8px grey;
   height: 80px;
-  background-color: blue;
 }
 
 .brand {
@@ -16,4 +15,10 @@
 
 a:hover {
   color: #7743db !important;
+}
+
+@media screen and (max-width: 768px) {
+  .brand {
+    font-size: 25px;
+  }
 }

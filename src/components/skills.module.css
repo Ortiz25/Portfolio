@@ -1,3 +1,7 @@
+.root {
+  box-shadow: 1px 1px 8px grey;
+}
+
 .heading {
   padding: 5%;
   text-align: center;

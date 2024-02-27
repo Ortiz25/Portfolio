@@ -24,10 +24,14 @@ import cambImg from "../images/cambium.jpg";
 
 function Skills({ darkTheme }) {
   const darkStyle = darkTheme
-    ? { backgroundColor: "#212529", color: "white" }
+    ? {
+        backgroundColor: "#212529",
+        color: "white",
+        boxShadow: "0px 1px 8px white",
+      }
     : { color: "black" };
   return (
-    <div style={darkStyle}>
+    <div style={darkStyle} className={classes.root}>
       <Container id="skills">
         <Row className={classes.heading}>
           <Col>

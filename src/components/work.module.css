@@ -1,0 +1,106 @@
+.root {
+  width: 100%;
+}
+
+.heading {
+  padding: 2%;
+  text-align: center;
+}
+.work-heading {
+  color: #7743db;
+  font-family: "Raleway", sans-serif;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 40px;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.card {
+  position: relative;
+  height: 32rem;
+  border: 0px solid black;
+  border-radius: 10%;
+  box-shadow: 1px 1px 40px grey;
+  margin-bottom: 20px;
+}
+.Img {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  border-radius: 10% 10% 0% 0%;
+}
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 25rem;
+  width: 100%;
+  opacity: 0;
+  border-radius: 10% 10% 0% 0%;
+}
+#btnGo {
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  opacity: 0;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+}
+#btnGo:hover {
+  cursor: pointer;
+}
+.card_title {
+  font-weight: 700;
+}
+.area {
+  width: 100%;
+  height: 25rem;
+}
+
+.area:hover .Img {
+  opacity: 0.3;
+}
+.area:hover #btnGo {
+  opacity: 3;
+  z-index: 2;
+}
+.Img:hover .overlay {
+  opacity: 1;
+  z-index: 1;
+}
+
+.text {
+  margin: 4%;
+}
+#action-btn {
+  position: absolute;
+  right: 5%;
+  bottom: 8%;
+  border-radius: 0%;
+  color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 90%;
+  }
+}
+/* @media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+} */
+
+/* @media screen and (max-width: 760px) {
+  .card {
+    width: 90%;
+  }
+  .Img {
+    width: 100%;
+  }
+} */

@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Raleway", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 code {

@@ -76,7 +76,7 @@ function Home({ darkTheme }) {
           </Col>
           <Col md="6" className={classes.profile}>
             <animated.div style={props}>
-              <Image src={profile} roundedCircle fluid loading="" />
+              <Image src={profile} roundedCircle fluid loading="laz" />
             </animated.div>
           </Col>
         </Row>
