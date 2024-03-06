@@ -47,4 +47,8 @@ table {
     right: 1.5%;
     top: 0%;
   }
+  .Img {
+    height: 25%;
+    border-radius: 10px;
+  }
 }

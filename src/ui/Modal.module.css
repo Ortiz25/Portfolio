@@ -37,7 +37,7 @@
 @media screen and (max-width: 768px) {
   .modal {
     top: 15%;
-    height: 45rem;
+    height: 38rem;
     overflow: scroll;
     border-radius: 10px;
     padding: 2%;

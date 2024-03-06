@@ -15,7 +15,7 @@ function Home({ darkTheme }) {
   const props = useSpring({
     opacity: 1,
     transform: "translateX(0)",
-    from: { opacity: 0, transform: "translateX(50px)" },
+    from: { opacity: 0, transform: "translateX(-50px)" },
     config: { tension: 50, friction: 5 },
   });
   const darkStyle = darkTheme
@@ -33,15 +33,12 @@ function Home({ darkTheme }) {
 
             <span>
               <h1>
-                <Typewriter text="Samuel Deya !" delay={200} />
+                <Typewriter text="Samuel Deya !" delay={230} />
               </h1>
-              <h2 className={classes["typed-out"]}>
-                A Web Developer and a Network Engineer
-              </h2>
-              <animated.p style={props}>
-                I am a fullstack web developer and a Networks Engineer by
+              <animated.h4 className={classes["typed-out"]} style={props}>
+                A linux-System Admin, Web-Developer and Network Engineer by
                 training.
-              </animated.p>
+              </animated.h4>
             </span>
 
             <Button variant="primary" className={classes.btn}>

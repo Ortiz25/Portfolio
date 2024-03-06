@@ -76,15 +76,15 @@ function About() {
           </Col>
           <Col md="6" className={classes.fade}>
             <animated.div id="animated-element" style={animationProps}>
-              <h5 className={classes.me}>About Me</h5>
+              <div className={classes.me}>About Me</div>
               <h3>
                 I am passionate about creating beautiful and functional websites
-                that provide an excellent user experience
+                that provide an excellent user experience.
               </h3>
               <p>
                 As a specialist in HTML, CSS and Javascript (React and Node js),
                 I have a deep understanding of the core building blocks of
-                modern web design.With a focus on accessibility and responsive
+                modern web design, with a focus on accessibility and responsive
                 design.I strive to deliver websites and web apps that look great
                 and work seamlessly across all devices.
               </p>

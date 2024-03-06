@@ -21,6 +21,8 @@ import nginxImg from "../images/svg/nginx.webp";
 import apachelImg from "../images/apache.jpg";
 import openImg from "../images/openwrt.jpg";
 import cambImg from "../images/cambium.jpg";
+import wordImg from "../images/wordpress.png";
+import ansibleImg from "../images/ansible.png";
 
 function Skills({ darkTheme }) {
   const darkStyle = darkTheme
@@ -41,7 +43,7 @@ function Skills({ darkTheme }) {
         </Row>
         <Row>
           <Row>
-            <Col md="5" className={classes["active-area"]}>
+            <Col md="4" className={classes["active-area"]}>
               <h3 className={classes.title}>Web Development</h3>
               <div className={classes.frame}>
                 <Card>
@@ -70,11 +72,15 @@ function Skills({ darkTheme }) {
                 </Card>
               </div>
             </Col>
-            <Col md="3" className={classes["active-area"]}>
-              <h3 className={classes.title}>UI/UX Design</h3>
+            <Col md="4" className={classes["active-area"]}>
+              <h3 className={classes.title}>UI/UX Design & CMS</h3>
               <Card>
                 <img src={figmaImg} alt="" className={classes["img_card"]} />
                 <h5>Figma</h5>
+              </Card>
+              <Card>
+                <img src={wordImg} alt="" className={classes["img_card"]} />
+                <h5>wordpress</h5>
               </Card>
             </Col>
             <Col md="4" className={classes["active-area"]}>
@@ -103,6 +109,14 @@ function Skills({ darkTheme }) {
                     className={classes["img_card"]}
                   />
                   <h5>Apache</h5>
+                </Card>
+                <Card>
+                  <img
+                    src={ansibleImg}
+                    alt=""
+                    className={classes["img_card"]}
+                  />
+                  <h5>Ansible</h5>
                 </Card>
               </div>
             </Col>
