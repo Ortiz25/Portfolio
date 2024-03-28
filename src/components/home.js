@@ -21,6 +21,7 @@ function Home({ darkTheme }) {
   const darkStyle = darkTheme
     ? { backgroundColor: "#212529", color: "white" }
     : { color: "black" };
+
   return (
     <div className={classes.root} style={darkStyle}>
       <Container>
@@ -42,7 +43,9 @@ function Home({ darkTheme }) {
             </span>
 
             <Button variant="primary" className={classes.btn}>
-              <a href="#contact">Hire Me</a>
+              <a href="#contact" style={{ color: "white" }}>
+                Hire Me
+              </a>
             </Button>
             <div>
               <h4 className={classes.join}>Join ME :</h4>

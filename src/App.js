@@ -9,26 +9,35 @@ import Contact from "./components/contact";
 import Services from "./components/services";
 import Work from "./components/work";
 import ModalInfo from "./components/modalInfo";
+import { workInfo } from "../src/files/workinfo";
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(true);
   const [modal, setModal] = useState(false);
-  const [projectInfo, setProject] = useState(0);
+  const [infos, setInfo] = useState(workInfo);
+  const [modalInfo, setModalInfo] = useState(null);
   return (
     <>
       {modal && (
         <ModalInfo
           setModal={setModal}
           modal={modal}
-          projectInfo={projectInfo}
-          setProject={setProject}
+          infos={infos}
+          modalInfo={modalInfo}
+          setModalInfo={setModalInfo}
         />
       )}
       <Navigationbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <Home darkTheme={darkTheme} />
       <About darkTheme={darkTheme} />
       <Skills darkTheme={darkTheme} />
-      <Work darkTheme={darkTheme} setModal={setModal} modal={modal} />
+      <Work
+        darkTheme={darkTheme}
+        setModal={setModal}
+        modalInfo={modalInfo}
+        setModalInfo={setModalInfo}
+        infos={infos}
+      />
       <Services darkTheme={darkTheme} />
       <Contact darkTheme={darkTheme} />
       <Footer darkTheme={darkTheme} />

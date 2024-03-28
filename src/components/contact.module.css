@@ -69,9 +69,7 @@ h5 {
   display: inline;
   margin-right: 2%;
 }
-.btn {
-  margin-left: 30%;
-}
+
 @media screen and (max-width: 480px) {
   .icon-phone,
   .icon-email,

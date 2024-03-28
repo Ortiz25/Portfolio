@@ -12,6 +12,13 @@ import Spinner from "react-bootstrap/Spinner";
 import { useSpring, animated } from "react-spring";
 
 function Contact({ darkTheme }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, updateSubmit] = useState(false);
+
   const [animationProps, set] = useSpring(() => ({
     opacity: 0,
     transform: "translateY(-100px)",
@@ -44,13 +51,6 @@ function Contact({ darkTheme }) {
       }
     };
   }, []);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, updateSubmit] = useState(false);
 
   function handleOnchange(e) {
     const { name, value } = e.target;

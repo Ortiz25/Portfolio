@@ -94,7 +94,13 @@ function About() {
                   height="25"
                   className={classes.fileicon}
                 />
-                <a href={cv} download target="_blank">
+                <a
+                  href={cv}
+                  download
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "white" }}
+                >
                   Download CV
                 </a>
               </Button>
